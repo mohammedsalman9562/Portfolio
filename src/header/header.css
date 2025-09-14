@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-container {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.header-logo {
+  height: 35px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
+
+.header-logo svg {
+  height: 100%;
+  width: auto;
+}
+
+.header-logo span {
+  font-size: 1.25rem;
+  margin-left: 0.3rem;
+  white-space: nowrap;
+}
+
+.header-menu-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  margin-right: 200px;
+}
+
+.header-menu-links li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.header-menu-link-style {
+  font-size: 1.35rem;
+  line-height: 32px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: 0.4s;
+}
+
+.header-menu-link-style:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.social-icons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.social-icons a:hover {
+  color: #08787e;
+  transform: scale(1.5);
+}
+
+/* ======================== */
+/* RESPONSIVE STYLES        */
+/* ======================== */
+@media (max-width: 1024px) {
+  .header-menu-links {
+    gap: 2rem;
+    margin-right: 0px;
+  }
+
+  .social-icons {
+    gap: 30px;
+    margin-right: 0px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: row;
+    padding: 15px 0;
+  }
+
+  /* Hide menu links on small screens */
+  .header-menu-links {
+    display: none;
+  }
+
+  /* Adjust social icons */
+  .social-icons {
+    margin-top: 15px;
+    gap: 20px;
+  }
+
+  .header-logo {
+    width: auto;
+    height: 30px;
+    margin-top: 20px;
+  }
+
+  .header-logo span {
+    font-size: 1rem;
+  }
+}
