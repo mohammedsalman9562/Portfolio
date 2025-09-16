@@ -1,13 +1,9 @@
-fetch("./src/header/header.html")
-  .then(res => {
-    if (!res.ok) throw new Error("HTTP error " + res.status);
-    return res.text();
-  })
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  })
-  .catch(err => console.error("Failed to load header:", err));
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector(".header-menu-links");
 
-
-
-    
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");   // animate lines
+    menu.classList.toggle("active");      // slide menu
+  });
+});
