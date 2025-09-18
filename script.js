@@ -2,11 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector(".header-menu-links");
 
+  // Hamburger toggle
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("open"); // animate lines
     menu.classList.toggle("active"); // slide menu
   });
+
+  // Active menu link on scroll
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".header-menu-links ul li a");
+
+  function activateMenu() {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100; // header offset
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateMenu);
 });
+
 
 // ================= H2 Texts =================
 const h2Texts = [

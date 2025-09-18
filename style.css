@@ -41,7 +41,7 @@ body {
 
 .header-logo {
   height: 35px;
-  width: 150px;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,11 +66,16 @@ body {
   margin-left: 0.3rem;
   white-space: nowrap;
 }
-
+.header-menu-links{
+  width:80%;
+  display:flex;
+  justify-content:flex-end;
+  margin-right: 5%;
+}
 .header-menu-links ul {
   list-style: none;
   display: flex;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .header-menu-links ul li a {
@@ -86,6 +91,13 @@ body {
   transform: scale(1.1);
   cursor: pointer;
 }
+
+/* Highlight active menu link */
+.header-menu-links ul li a.active {
+  color: #fff; /* solid white */
+  transform: scale(1.1); /* optional: subtle emphasis */
+}
+
 
 .social-icons {
   display: flex;
@@ -663,6 +675,12 @@ body {
 /* ============================= */
 
  @media (max-width: 1024px) {
+  .header-menu-links{
+  width:0;
+  display:flex;
+  justify-content:flex-start;
+  margin-right: 0;
+}
      .social-icons {
     display: none;
   }
